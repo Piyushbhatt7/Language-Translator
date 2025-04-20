@@ -14,6 +14,7 @@ class _LanguageTranslationState extends State<LanguageTranslation> {
     'Hindi',
     'English',
     'Marthi',
+    'Arabic',
   ];
 
 var originLanguage = "From";
