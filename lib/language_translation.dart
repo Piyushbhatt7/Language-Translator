@@ -13,7 +13,7 @@ class _LanguageTranslationState extends State<LanguageTranslation> {
   var languages = [
     'Hindi',
     'English',
-    'Marthi',
+    'Marathi',
     'Arabic',
   ];
 
@@ -163,7 +163,7 @@ void translate(String src, String dest, String input) async
                   style: ElevatedButton.styleFrom(backgroundColor: Color(0xff2bc5a)),
                   onPressed: ()
                 {
-                  getLanguageCode(languageController.text.toString());
+                  translate(getLanguageCode(originLanguage), destinationLanguage, input)
 
                 }, 
                 child: Text("Translate",)),
