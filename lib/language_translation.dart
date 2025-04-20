@@ -55,6 +55,11 @@ TextEditingController languageController = TextEditingController();
                       );
                     }).toList(),
                     onChanged: (String? value)
+                    {
+                      setState(() {
+                        
+                      });
+                    }
                     )
                 ],
               )
