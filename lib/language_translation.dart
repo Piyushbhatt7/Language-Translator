@@ -103,7 +103,13 @@ TextEditingController languageController = TextEditingController();
                     border: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.white,
-                        
+                        width: 1.0,
+                      )
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white,
+                        width: 1.0,
                       )
                     )
                   ),
