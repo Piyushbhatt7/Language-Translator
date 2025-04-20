@@ -44,7 +44,8 @@ TextEditingController languageController = TextEditingController();
                     focusColor: Colors.white,
                     iconDisabledColor: Colors.white,
                     iconEnabledColor: Colors.white,
-                    hint: Text(originLanguage),
+                    hint: Text(originLanguage, style: TextStyle(color: Colors.white),),
+                    dropdownColor: Colors.white,
                     items: items, 
                     onChanged: onChanged
                     )
