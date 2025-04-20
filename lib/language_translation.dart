@@ -45,7 +45,11 @@ String getLanguageCode(String language)
   }
   else if(language == "Hindi")
   {
-    return
+    return "hi";
+  }
+  else if(language == "Marathi")
+  {
+    return "mr";
   }
 }
   @override
