@@ -65,7 +65,7 @@ String getLanguageCode(String language)
     return Scaffold(
       backgroundColor: Color(0xff10223d),
       appBar: AppBar(
-        title: Text("Language Translator",), centerTitle: true,
+        title: Text("Language Translator", style: TextStyle(color: Colors.white),), centerTitle: true,
         backgroundColor: Color(0xff10223d),
         elevation: 0,
       ),
