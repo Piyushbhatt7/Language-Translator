@@ -30,37 +30,28 @@ void translate(String src, String dest, String input) async
       output = "Failed to translate";
     });
     return;
-  GoogleTranslator translator = new GoogleTranslator();
+  }
+  GoogleTranslator translator = GoogleTranslator();
   var translation = await translator.translate(input, from: src, to: dest);
   setState(() {
     output = translation.text.toString();
   });
 
   }
-}
-
-String getLanguageCode(String language)
-{
-  if(language == "English")
-  {
-    return "en";
+ String getLanguageCode(String language) {
+    switch (language) {
+      case "English":
+        return "en";
+      case "Hindi":
+        return "hi";
+      case "Marathi":
+        return "mr";
+      case "Arabic":
+        return "ar";
+      default:
+        return "--";
+    }
   }
-  else if(language == "Hindi")
-  {
-    return "hi";
-  }
-  else if(language == "Marathi")
-  {
-    return "mr";
-  }
-  else if(language == 'Arabic')
-  {
-    return "ar";
-  }
-  else {
-    return "--";
-  }
-}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
