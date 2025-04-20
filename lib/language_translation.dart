@@ -88,6 +88,15 @@ TextEditingController languageController = TextEditingController();
                     }
                     ),
                 ],
+              ),
+
+              SizedBox(height: 50.0,),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: TextFormField(
+                  cursorColor: Colors.white,
+                  autofocus: false,
+                ), 
               )
             ],
           ),
