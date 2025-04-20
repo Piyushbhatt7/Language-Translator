@@ -18,7 +18,7 @@ class _LanguageTranslationState extends State<LanguageTranslation> {
   ];
 
 String? originLanguage = "From";
-var destinationLanguage = "To";
+String? destinationLanguage = "To";
 var output = "";
 TextEditingController languageController = TextEditingController();
 
