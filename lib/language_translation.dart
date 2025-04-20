@@ -8,6 +8,14 @@ class LanguageTranslation extends StatefulWidget {
 }
 
 class _LanguageTranslationState extends State<LanguageTranslation> {
+
+  var languages = [
+    'Hindi',
+    'English',
+    'Marthi',
+  ];
+
+var originLanguage = "From";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
