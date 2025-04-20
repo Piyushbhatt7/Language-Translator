@@ -9,7 +9,7 @@ class LanguageTranslation extends StatefulWidget {
 }
 
 class _LanguageTranslationState extends State<LanguageTranslation> {
-
+  final translator = GoogleTranslator();
   final List<String> languages = [
     'Hindi',
     'English',
@@ -17,7 +17,7 @@ class _LanguageTranslationState extends State<LanguageTranslation> {
     'Arabic',
   ];
 
-var originLanguage = "From";
+String? originLanguage = "From";
 var destinationLanguage = "To";
 var output = "";
 TextEditingController languageController = TextEditingController();
