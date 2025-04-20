@@ -10,18 +10,19 @@ class LanguageTranslation extends StatefulWidget {
 
 class _LanguageTranslationState extends State<LanguageTranslation> {
   final translator = GoogleTranslator();
-  final List<String> languages = [
-    'Hindi',
-    'English',
-    'Marathi',
-    'Arabic',
-  ];
 
-String? originLanguage = "From";
-String? destinationLanguage = "To";
-String output = "";
-TextEditingController languageController = TextEditingController();
- final Map<String, String> languageCodes = {
+  // ✅ 1. LANGUAGE LIST – Add or remove languages here
+  final List<String> languages = ['Hindi', 'English', 'Marathi', 'Arabic'];
+
+  // ✅ 2. These will hold the selected languages
+  String? originLanguage;
+  String? destinationLanguage;
+
+  String output = "";
+  TextEditingController languageController = TextEditingController();
+
+  // ✅ 3. Language codes used for translation – You can add more here
+  final Map<String, String> languageCodes = {
     'English': 'en',
     'Hindi': 'hi',
     'Marathi': 'mr',
@@ -54,13 +55,14 @@ TextEditingController languageController = TextEditingController();
       });
     }
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff10223d),
+      backgroundColor: Color(0xff10223d), // ✅ 5. Background color of the whole screen
       appBar: AppBar(
-        title: Text("Language Translator", style: TextStyle(color: Colors.white),), centerTitle: true,
+        title: Text("Language Translator", style: TextStyle(color: Colors.white)),
+        centerTitle: true,
         backgroundColor: Color(0xff10223d),
         elevation: 0,
       ),
@@ -68,117 +70,99 @@ TextEditingController languageController = TextEditingController();
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                height: 50.0,
-              ),
+              SizedBox(height: 50.0),
+
+              // ✅ 6. Language dropdowns
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  DropdownButton(
-                    focusColor: Colors.white,
-                    iconDisabledColor: Colors.white,
-                    iconEnabledColor: Colors.white,
-                    hint: Text(originLanguage, style: TextStyle(color: Colors.white),),
-                    icon: Icon(Icons.keyboard_arrow_down_outlined),
+                  // From Language
+                  DropdownButton<String>(
                     dropdownColor: Colors.white,
-                    items: languages.map((String dropDownStringItem)
-                    {
-                      return DropdownMenuItem(
-                        child: Text(dropDownStringItem),
-                        value: dropDownStringItem,
+                    hint: Text("From", style: TextStyle(color: Colors.white)), // White placeholder
+                    value: originLanguage,
+                    style: TextStyle(color: Colors.black), // ✅ FIXED: black text on white dropdown
+                    iconEnabledColor: Colors.white,
+                    items: languages.map((String language) {
+                      return DropdownMenuItem<String>(
+                        value: language,
+                        child: Text(language),
                       );
                     }).toList(),
-                    onChanged: (String? value)
-                    {
+                    onChanged: (String? value) {
                       setState(() {
-                        originLanguage = value!;
+                        originLanguage = value;
                       });
-                    }
-                    ),
+                    },
+                  ),
 
-                    SizedBox(width: 50.0,),
-                    Icon(Icons.arrow_right_alt_outlined, color: Colors.white, size: 40.0,),
-                    SizedBox(width: 40.0,),
+                  SizedBox(width: 20.0),
+                  Icon(Icons.arrow_forward, color: Colors.white),
+                  SizedBox(width: 20.0),
 
-                    DropdownButton(
-                    focusColor: Colors.white,
-                    iconDisabledColor: Colors.white,
-                    iconEnabledColor: Colors.white,
-                    hint: Text(destinationLanguage, style: TextStyle(color: Colors.white),),
-                    icon: Icon(Icons.keyboard_arrow_down_outlined),
+                  // To Language
+                  DropdownButton<String>(
                     dropdownColor: Colors.white,
-                    items: languages.map((String dropDownStringItem)
-                    {
-                      return DropdownMenuItem(
-                        child: Text(dropDownStringItem),
-                        value: dropDownStringItem,
+                    hint: Text("To", style: TextStyle(color: Colors.white)),
+                    value: destinationLanguage,
+                    style: TextStyle(color: Colors.black), // ✅ FIXED
+                    iconEnabledColor: Colors.white,
+                    items: languages.map((String language) {
+                      return DropdownMenuItem<String>(
+                        value: language,
+                        child: Text(language),
                       );
                     }).toList(),
-                    onChanged: (String? value)
-                    {
+                    onChanged: (String? value) {
                       setState(() {
-                        destinationLanguage = value!;
+                        destinationLanguage = value;
                       });
-                    }
-                    ),
+                    },
+                  ),
                 ],
               ),
 
-              SizedBox(height: 50.0,),
+              SizedBox(height: 30.0),
+
+              // ✅ 7. Input Text Field
               Padding(
-                padding: EdgeInsets.all(8.0),
-                child: TextFormField(
-                  cursorColor: Colors.white,
-                  autofocus: false,
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  controller: languageController,
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     labelText: 'Please Enter your text...',
-                    labelStyle: TextStyle(fontSize: 15, color: Colors.white),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                        width: 1.0,
-                      )
-                    ),
+                    labelStyle: TextStyle(color: Colors.white70),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                        width: 1.0,
-                      )
+                      borderSide: BorderSide(color: Colors.white),
                     ),
-                    errorStyle: TextStyle(
-                      color: Colors.red,
-                      fontSize: 15.0,
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
                     ),
                   ),
-                  controller: languageController,
-                  validator: (value) {
-                    if(value == null || value.isEmpty)
-                    {
-                      return'Please enter text to translate';
-                    }
-                  },
-                ), 
+                  cursorColor: Colors.white,
+                ),
               ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Color(0xff2bc5a)),
-                  onPressed: ()
-                {
-                  translate(getLanguageCode(originLanguage), destinationLanguage, languageController.text.toString());
 
-                }, 
-                child: Text("Translate",)),
-              
+              // ✅ 8. Translate Button – always clickable
+              ElevatedButton(
+                onPressed: translateText,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal, // ✅ Change button color here
+                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                ),
+                child: Text("Translate", style: TextStyle(fontSize: 16)),
               ),
-              SizedBox(height: 20.0,),
-              Text(
-                "\n$output",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
+
+              SizedBox(height: 30),
+
+              // ✅ 9. Output Text – shown after translation
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text(
+                  output,
+                  style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
+                  textAlign: TextAlign.center,
                 ),
               )
             ],
