@@ -125,6 +125,17 @@ TextEditingController languageController = TextEditingController();
                     }
                   },
                 ), 
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: Color(0xff2bc5a)),
+                  onPressed: ()
+                {
+
+                }, 
+                child: Text("Translate",)),
+              
               )
             ],
           ),
