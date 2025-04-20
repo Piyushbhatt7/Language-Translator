@@ -182,6 +182,7 @@ String getLanguageCode(String language)
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
                 ),
               )
             ],
