@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Language Translator',
+      title: 'Language Translator',color: Colors.white,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
        
