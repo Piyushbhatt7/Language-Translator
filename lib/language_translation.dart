@@ -47,7 +47,13 @@ TextEditingController languageController = TextEditingController();
                     hint: Text(originLanguage, style: TextStyle(color: Colors.white),),
                     icon: Icon(Icons.keyboard_arrow_down_outlined),
                     dropdownColor: Colors.white,
-                    items: items, 
+                    items: languages.map((String dropDownStringItem)
+                    {
+                      return DropdownMenuItem(
+                        child: Text(dropDownStringItem),
+                        value: dropDownStringItem,
+                      )
+                    }), 
                     onChanged: onChanged
                     )
                 ],
