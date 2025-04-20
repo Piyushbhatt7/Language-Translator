@@ -24,17 +24,18 @@ TextEditingController languageController = TextEditingController();
 
 void translate(String src, String dest, String input) async
 {
+   if(src == '--' || dest == '--' || input.isEmpty)
+  {
+    setState(() {
+      output = "Failed to translate";
+    });
+    return;
   GoogleTranslator translator = new GoogleTranslator();
   var translation = await translator.translate(input, from: src, to: dest);
   setState(() {
     output = translation.text.toString();
   });
 
-  if(src == '--' || dest == '--')
-  {
-    setState(() {
-      output = "Failed to translate";
-    });
   }
 }
 
