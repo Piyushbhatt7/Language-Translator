@@ -10,7 +10,7 @@ class LanguageTranslation extends StatefulWidget {
 
 class _LanguageTranslationState extends State<LanguageTranslation> {
 
-  var languages = [
+  final List<String> languages = [
     'Hindi',
     'English',
     'Marathi',
