@@ -163,7 +163,7 @@ void translate(String src, String dest, String input) async
                   style: ElevatedButton.styleFrom(backgroundColor: Color(0xff2bc5a)),
                   onPressed: ()
                 {
-                  translate(getLanguageCode(originLanguage), destinationLanguage, input)
+                  translate(getLanguageCode(originLanguage), destinationLanguage, languageController.text.toString());
 
                 }, 
                 child: Text("Translate",)),
