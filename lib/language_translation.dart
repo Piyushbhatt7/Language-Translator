@@ -63,7 +63,8 @@ TextEditingController languageController = TextEditingController();
                     ),
 
                     SizedBox(width: 50.0,),
-                    Icon(Icons.arrow_right_alt_outlined)
+                    Icon(Icons.arrow_right_alt_outlined, color: Colors.white, size: 40.0,),
+                    
                 ],
               )
             ],
