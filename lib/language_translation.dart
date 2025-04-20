@@ -96,6 +96,17 @@ TextEditingController languageController = TextEditingController();
                 child: TextFormField(
                   cursorColor: Colors.white,
                   autofocus: false,
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    labelText: 'Please Enter your text...',
+                    labelStyle: TextStyle(fontSize: 15, color: Colors.white),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white,
+                        
+                      )
+                    )
+                  ),
                 ), 
               )
             ],
