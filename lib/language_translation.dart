@@ -111,8 +111,16 @@ TextEditingController languageController = TextEditingController();
                         color: Colors.white,
                         width: 1.0,
                       )
-                    )
+                    ),
+                    errorStyle: TextStyle(
+                      color: Colors.red,
+                      fontSize: 15.0,
+                    ),
                   ),
+                  controller: languageController,
+                  validator: (value) {
+                    
+                  },
                 ), 
               )
             ],
