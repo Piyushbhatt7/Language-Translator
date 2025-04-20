@@ -36,6 +36,18 @@ void translate(String src, String dest, String input) async
     });
   }
 }
+
+String getLanguageCode(String language)
+{
+  if(language == "English")
+  {
+    return "en";
+  }
+  else if(language == "Hindi")
+  {
+    return
+  }
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -147,7 +159,7 @@ void translate(String src, String dest, String input) async
                   style: ElevatedButton.styleFrom(backgroundColor: Color(0xff2bc5a)),
                   onPressed: ()
                 {
-
+                  translate(src, dest, input)
                 }, 
                 child: Text("Translate",)),
               
