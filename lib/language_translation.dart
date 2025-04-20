@@ -19,6 +19,8 @@ var originLanguage = "From";
 var destinationLanguage = "To";
 var output = "";
 TextEditingController languageController = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +44,7 @@ TextEditingController languageController = TextEditingController();
                     focusColor: Colors.white,
                     iconDisabledColor: Colors.white,
                     iconEnabledColor: Colors.white,
+                    hint: Text(originLanguage),
                     items: items, 
                     onChanged: onChanged
                     )
