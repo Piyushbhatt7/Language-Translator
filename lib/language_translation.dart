@@ -12,7 +12,7 @@ class _LanguageTranslationState extends State<LanguageTranslation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Language Translator",),
+        title: Text("Language Translator",), centerTitle: true,
       ),
     );
   }
