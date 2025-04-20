@@ -144,7 +144,7 @@ void translate(String src, String dest, String input) async
               Padding(
                 padding: EdgeInsets.all(8.0),
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: Color(0xff2bc5a)),
+                  style: ElevatedButton.styleFrom(backgroundColor: Color(0xff2bc5a)),
                   onPressed: ()
                 {
 
