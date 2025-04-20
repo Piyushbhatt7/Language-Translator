@@ -57,7 +57,7 @@ TextEditingController languageController = TextEditingController();
                     onChanged: (String? value)
                     {
                       setState(() {
-                        
+                        originLanguage = value!;
                       });
                     }
                     )
