@@ -175,6 +175,14 @@ String getLanguageCode(String language)
                 }, 
                 child: Text("Translate",)),
               
+              ),
+              SizedBox(height: 20.0,),
+              Text(
+                "\n$output",
+                style: TextStyle(
+                  color: Colors.white,
+                  
+                ),
               )
             ],
           ),
