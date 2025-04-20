@@ -16,6 +16,9 @@ class _LanguageTranslationState extends State<LanguageTranslation> {
   ];
 
 var originLanguage = "From";
+var destinationLanguage = "To";
+var output = "";
+TextEditingController languageController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
