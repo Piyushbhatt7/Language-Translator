@@ -19,39 +19,42 @@ class _LanguageTranslationState extends State<LanguageTranslation> {
 
 String? originLanguage = "From";
 String? destinationLanguage = "To";
-var output = "";
+String output = "";
 TextEditingController languageController = TextEditingController();
+ final Map<String, String> languageCodes = {
+    'English': 'en',
+    'Hindi': 'hi',
+    'Marathi': 'mr',
+    'Arabic': 'ar',
+    // Add more like: 'Spanish': 'es',
+  };
 
-void translate(String src, String dest, String input) async
-{
-   if(src == '--' || dest == '--' || input.isEmpty)
-  {
-    setState(() {
-      output = "Failed to translate";
-    });
-    return;
-  }
-  GoogleTranslator translator = GoogleTranslator();
-  var translation = await translator.translate(input, from: src, to: dest);
-  setState(() {
-    output = translation.text.toString();
-  });
+  // ✅ 4. Translation logic
+  void translateText() async {
+    if (originLanguage == null || destinationLanguage == null || languageController.text.isEmpty) {
+      setState(() {
+        output = "Please select languages and enter text.";
+      });
+      return;
+    }
 
-  }
- String getLanguageCode(String language) {
-    switch (language) {
-      case "English":
-        return "en";
-      case "Hindi":
-        return "hi";
-      case "Marathi":
-        return "mr";
-      case "Arabic":
-        return "ar";
-      default:
-        return "--";
+    try {
+      var translation = await translator.translate(
+        languageController.text,
+        from: languageCodes[originLanguage]!,
+        to: languageCodes[destinationLanguage]!,
+      );
+
+      setState(() {
+        output = translation.text;
+      });
+    } catch (e) {
+      setState(() {
+        output = "Translation failed: ${e.toString()}";
+      });
     }
   }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
