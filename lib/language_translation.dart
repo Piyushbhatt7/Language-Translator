@@ -70,7 +70,7 @@ TextEditingController languageController = TextEditingController();
                     focusColor: Colors.white,
                     iconDisabledColor: Colors.white,
                     iconEnabledColor: Colors.white,
-                    hint: Text(originLanguage, style: TextStyle(color: Colors.white),),
+                    hint: Text(destinationLanguage, style: TextStyle(color: Colors.white),),
                     icon: Icon(Icons.keyboard_arrow_down_outlined),
                     dropdownColor: Colors.white,
                     items: languages.map((String dropDownStringItem)
@@ -83,7 +83,7 @@ TextEditingController languageController = TextEditingController();
                     onChanged: (String? value)
                     {
                       setState(() {
-                        originLanguage = value!;
+                        destinationLanguage = value!;
                       });
                     }
                     ),
