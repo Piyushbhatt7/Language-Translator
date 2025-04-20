@@ -52,6 +52,13 @@ String getLanguageCode(String language)
   {
     return "mr";
   }
+  else if(language == 'Arabic')
+  {
+    return "ar";
+  }
+  else {
+    return "--";
+  }
 }
   @override
   Widget build(BuildContext context) {
