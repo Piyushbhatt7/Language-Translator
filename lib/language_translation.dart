@@ -60,7 +60,10 @@ TextEditingController languageController = TextEditingController();
                         originLanguage = value!;
                       });
                     }
-                    )
+                    ),
+
+                    SizedBox(width: 50.0,),
+                    
                 ],
               )
             ],
