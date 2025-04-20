@@ -23,7 +23,11 @@ TextEditingController languageController = TextEditingController();
 
 void translate(String src, String dest, String input) async
 {
-  GoogleTranslator translator = GoogleTranslator();
+  GoogleTranslator translator = new GoogleTranslator();
+  var translation = awit translator.translate(input, from: src, to: dest);
+  setState(() {
+    output
+  });
 }
   @override
   Widget build(BuildContext context) {
