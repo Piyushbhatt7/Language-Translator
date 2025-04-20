@@ -119,7 +119,10 @@ TextEditingController languageController = TextEditingController();
                   ),
                   controller: languageController,
                   validator: (value) {
-                    
+                    if(value == null || value.isEmpty)
+                    {
+                      return'Please enter text to translate';
+                    }
                   },
                 ), 
               )
