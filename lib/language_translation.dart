@@ -171,7 +171,8 @@ String getLanguageCode(String language)
                   style: ElevatedButton.styleFrom(backgroundColor: Color(0xff2bc5a)),
                   onPressed: ()
                 {
-                  translate(getLanguageCode(originLanguage), getLanguageCode(destinationLanguage), getLanguageCode(languageController.text.toString()));
+                  getLanguageCode(languageController.text.toString());
+
                 }, 
                 child: Text("Translate",)),
               
