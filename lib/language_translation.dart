@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:translator/translator.dart';
 
 class LanguageTranslation extends StatefulWidget {
   const LanguageTranslation({super.key});
@@ -20,7 +21,10 @@ var destinationLanguage = "To";
 var output = "";
 TextEditingController languageController = TextEditingController();
 
-
+void translate(String src, String dest, String input) async
+{
+  GoogleTranslator translator = GoogleTranslator();
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
