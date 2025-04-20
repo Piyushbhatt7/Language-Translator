@@ -181,7 +181,7 @@ String getLanguageCode(String language)
                 "\n$output",
                 style: TextStyle(
                   color: Colors.white,
-                  
+                  fontWeight: FontWeight.bold,
                 ),
               )
             ],
