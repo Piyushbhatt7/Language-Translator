@@ -52,8 +52,8 @@ TextEditingController languageController = TextEditingController();
                       return DropdownMenuItem(
                         child: Text(dropDownStringItem),
                         value: dropDownStringItem,
-                      )
-                    }), 
+                      );
+                    }).toList(),
                     onChanged: onChanged
                     )
                 ],
