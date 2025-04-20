@@ -28,6 +28,13 @@ void translate(String src, String dest, String input) async
   setState(() {
     output = translation.text.toString();
   });
+
+  if(src == '--' || dest == '--')
+  {
+    setState(() {
+      output = "Failed to translate";
+    });
+  }
 }
   @override
   Widget build(BuildContext context) {
